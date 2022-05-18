@@ -55,9 +55,9 @@ The following fields should be returned:
 
 For this we need to pass two input
 
-** 1 st : [OFFSET] which is used for
+** 1 st : [OFFSET] which is used for pagination - Whatever the offset is it means that which page you are on
 
-** 2 nd : [NUM] of starred repository on that page
+** 2 nd : [NUM] of starred repository on that page -  Number of records on that page.
 
 - Example 1: http://localhost:8080/search/repos?offSet=1&num=40
   Here 40 records will come on first page
