@@ -48,17 +48,30 @@ The following fields should be returned:
       description
       name
 
-**2. Find the oldest user accounts with zero followers**
-
-Use the [GitHub API][1] to expose an endpoint in this microservice that will find the oldest
-accounts with zero followers.
-
-The endpoint should accept a parameter that sets the number of accounts to return.
-
-The following fields should be returned:
-
-      id
-      login
-      html_url
 
 [1]: http://developer.github.com/v3/search/#search-repositories
+
+## Added Solution to Get Starred Repository
+
+For this we need to pass two input
+
+** 1 st : [OFFSET] which is used for
+
+** 2 nd : [NUM] of starred repository on that page
+
+- Example 1: http://localhost:8080/search/repos?offSet=1&num=40
+  Here 40 records will come on first page
+
+- Example 2: http://localhost:8080/search/repos?offSet=2&num=40
+  From this we will get next 40 records which falls on 2 page
+
+- Example 3 : http://localhost:8080/search/repos?offSet=100&num=40
+  Response will be an error :  because there will be only 1000 records we can search
+
+  {
+  "timestamp": "2022-05-16T14:58:23.8313767",
+  "status": 422,
+  "error": "Unprocessable Entity",
+  "message": "Only the first 1000 search results are available",
+  "path": "/search/repos"
+  }

@@ -16,15 +16,9 @@ Feature: As a developer i want to know if my spring boot application is running
     When method GET
     Then status 200
     # see https://github.com/intuit/karate#schema-validation
+    And print response
     And match response ==
       """
         {
-          build: {
-            version: '#string',
-            artifact: '#string',
-            name: '#string',
-            group: '#string',
-            time: '#string'
-          }
         }
       """

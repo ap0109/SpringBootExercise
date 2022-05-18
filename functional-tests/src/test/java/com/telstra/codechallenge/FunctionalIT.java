@@ -13,9 +13,14 @@ public class FunctionalIT {
     return Karate.run("helloworld").relativeTo(getClass());
   }
 
+//  @Karate.Test
+//  Karate testQuotes() {
+//    return Karate.run("quotes").relativeTo(getClass());
+//  }
+
   @Karate.Test
-  Karate testQuotes() {
-    return Karate.run("quotes").relativeTo(getClass());
+  Karate testGitSearch() {
+    return Karate.run("githubsearch").relativeTo(getClass());
   }
 
 }
